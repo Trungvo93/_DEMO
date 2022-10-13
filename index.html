@@ -23,42 +23,10 @@
 </body>
 
 <!-- Phải thêm type babel thì mới chạy dc JSX -->
-<script type="text/babel">
-    const course = [
-        { name: 'HTML, CSS' },
-        { name: 'Responsive web design' },
-        { name: 'ReactJS' }
-    ]
-    const ulReact = <ul>
-        {
-            course.map((e, index) => {
-                return <li key={index}>{e.name}</li>
-            })
-        }
-    </ul>
 
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(
-        ulReact
-    )
+<script src="index.js" type="text/babel">
 </script>
-<!-- <script src="./index.js" type="text/babel"></script> -->
-<script>
-    const ulDOM = document.createElement('ul');
-    ulDOM.id = 'ul-id';
-    ulDOM.style = 'color:red;font-size:30px';
+<!-- <script src="getAPI.js"></script> -->
 
-    const li1DOM = document.createElement('li');
-    li1DOM.innerHTML = 'Javascript';
-    li1DOM.id = 'li1';
-
-    const li2DOM = document.createElement('li');
-    li2DOM.innerHTML = 'Reactjs';
-
-    ulDOM.appendChild(li1DOM);
-    ulDOM.appendChild(li2DOM);
-    // document.body.appendChild(ulDOM);
-    // console.log(ulDOM)
-</script>
 
 </html>
