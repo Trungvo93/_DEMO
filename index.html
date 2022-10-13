@@ -9,6 +9,10 @@
     <!-- <script type="module" src="app.js"></script> -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Cài babel mới chạy dc JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
 </head>
 
 </head>
@@ -17,15 +21,26 @@
     <div id="root"></div>
 
 </body>
-<script>
-    const ulReact = React.createElement(
-        'ul', { id: "ul_id", style: { color: 'red' } },
-        React.createElement('li', { id: 'li1' }, 'Javascript'),
-        React.createElement('li', { id: 'li2' }, 'Reactjs')
-    )
+
+<!-- Phải thêm type babel thì mới chạy dc JSX -->
+<script type="text/babel">
+    const course = [
+        { name: 'HTML, CSS' },
+        { name: 'Responsive web design' },
+        { name: 'ReactJS' }
+    ]
+    const ulReact = <ul>
+        {
+            course.map((e, index) => {
+                return <li key={index}>{e.name}</li>
+            })
+        }
+    </ul>
 
     const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(ulReact)
+    root.render(
+        ulReact
+    )
 </script>
 <!-- <script src="./index.js" type="text/babel"></script> -->
 <script>
