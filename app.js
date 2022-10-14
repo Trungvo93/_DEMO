@@ -1,5 +1,33 @@
-import logger from "./logger.js";
-// import {TYPE_LOG,TYPE_WARN,TYPE_ERROR}  from './constants.js';
-import * as constants  from './constants.js';
-logger('debug',constants.TYPE_ERROR);
 
+//Tạo button và href cùng kiểu
+
+const ButtonHref = ({ title, href, onClick }) => {
+    let Component = 'button';
+    const props = {};
+    if (href) {
+        Component = 'a'
+        props.href = href
+    }
+    if (onClick) {
+        props.onClick = onClick
+    }
+
+    return <Component {...props} className="ButtonHref" >{title}</Component>
+}
+
+
+const App = () => {
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    return root.render(
+        <div id="wrapper">
+            <ButtonHref
+                title="Click me!"
+                href="https://fullstack.edu.vn/"
+                onClick={() => console.log(Math.random())}
+            />
+        </div>
+    )
+}
+
+
+App()

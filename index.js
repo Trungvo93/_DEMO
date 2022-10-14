@@ -1,5 +1,3 @@
-
-
 const PostItem = () => {
     return (
         <div className="post-item">
@@ -8,7 +6,6 @@ const PostItem = () => {
         </div>
     )
 }
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <div className="posts-list">
